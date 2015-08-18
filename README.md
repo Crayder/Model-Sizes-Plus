@@ -34,7 +34,8 @@ fclose(Offsets);
 ![Example Image](http://i.imgur.com/VRB9NNb.png "Example Image")
 
 * _* Green = New, Red = Old_
-* _* Many (most) other objects are affected also. Many even have differences over 100, A couple have differences over 200! Kalcor can't be blamed for these faults though, he extracted the data directly form the game files.
+* _* Many (most) other objects are affected also. Many even have differences over 100, A couple have differences over 200! Kalcor can't be blamed for these faults though, he extracted the data directly form the game files._
 
 Thanks Y-Less for releasing the old one.
+
 Thanks Pottus, Chris420, and Slice for ColAndreas (making this possible).
