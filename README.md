@@ -41,3 +41,5 @@ _* Many (most) other objects are affected also. Many even have differences over 
 Thanks Y-Less for releasing the old one.
 
 Thanks Pottus, Chris420, and Slice for ColAndreas (making this possible).
+
+To see major range differences (above 1.0), see the differences.csv table.
