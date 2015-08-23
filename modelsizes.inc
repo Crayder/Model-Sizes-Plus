@@ -12,15 +12,14 @@
  */
 
 /*
-	There are two arrays in this include:
+	There are three arrays in this include:
 
 	- MODELS_gColRadius
 
 		This array lists all the radii of the collision spheres for all the GTA
 		objects used in SA (including the SA:MP objects); except skins,
 		vehicles, and weapons.  The collision sphere entirely encompases the
-		object, so is a good estimator of the size of the object (for example to
-		set the view distance accordingly).
+		object (for example to set the view distance accordingly).
 
 	- MODELS_gColOffset
 
@@ -34,13 +33,17 @@
 		is why this is a separate "stock" array - so it isn't included in the
 		compiled code if not used.
 
+	- MODELS_gColAABB
+
+		This array lists all the offsets of the bounding boxes for all
+		objects. AABB Stands for axis-aligned-bounding-box. 
+
 	Usage is VERY simple.  For model IDs up to 19901, simply use that number as
 	an index in to the array, any other IDs don't exist.
 
 	Big thanks to Pottus, Chris, and Slice for ColAndreas (used to export proper data using bullet physics).
 
 	Note that due to the sheer volume of data here, we need to set:
-
 		#pragma compress 0
 
 	To avoid the warning that it gets set anyway.
