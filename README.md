@@ -8,11 +8,15 @@ Basically said, this is just the better version of the old one. When you know wh
 * Extreme percision (see picture below for comparison). *
 * Exact offsets.
 * Easy to update with new versions of SA-MP (new objects).
+* Adds exact bounding boxes.
+* Adds exact dimensions.
 
 ## Generator
 ```pawn
+//Model Sphere Export
+fremove("sizes.txt"); fremove("offsets.txt");
 new Line[2][1536], Float:oX, Float:oY, Float:oZ, Float:R, File:Sizes = fopen("sizes.txt", io_append), File:Offsets = fopen("offsets.txt", io_append);
-for(new row; row < 2000; row++) 
+for(new row; row < 2000; row++)
 {
 	Line[0][0] = EOS; Line[1][0] = EOS;
 	strcat(Line[0], "\t\t"); strcat(Line[1], "\t\t");
@@ -27,6 +31,23 @@ for(new row; row < 2000; row++)
 }
 fclose(Sizes);
 fclose(Offsets);
+//Model Dimension Export
+fremove("dims.txt");
+new Line[1536], Float:Min[3], Float:Max[3], File:Dimensions = fopen("dims.txt", io_append);
+	
+for(new row; row < 4000; row++)
+{
+	Line[0] = EOS;
+	strcat(Line, "\t\t");
+	for(new col; col < 5; col++)
+	{
+		CA_GetModelBoundingBox((row * 5) + col, Min[0], Min[1], Min[2], Max[0], Max[1], Max[2]);
+		strcat(Line, sprintf("{{%0.6f, %0.6f, %0.6f}, {%0.6f, %0.6f, %0.6f}}, ", Min[0], Min[1], Min[2], Max[0], Max[1], Max[2]));
+	}
+	strcat(Line, "\r\n");
+	fwrite(Dimensions, Line);
+}
+fclose(Dimensions);
 ```
 
 ## Extra
