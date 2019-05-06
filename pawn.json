@@ -1,5 +1,5 @@
 {
     "user": "Crayder",
-    "repo": "Model-Sizes-Plus@db-mode",
+    "repo": "Model-Sizes-Plus",
     "dependencies": ["sampctl/samp-stdlib"]
 }
