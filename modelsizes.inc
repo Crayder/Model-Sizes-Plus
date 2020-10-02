@@ -51,6 +51,18 @@
 
 //#pragma compress 0
 
+// built-in include guard removal
+// just in case the user has a local dependency with the same file name
+#if defined _inc_modelsizes
+	#undef _inc_modelsizes
+#endif
+
+// custom include-guard to ensure we don't duplicate
+#if defined _sizes_plus_included
+	#endinput
+#endif
+#define _sizes_plus_included
+
 stock const
 	/*
 		This array lists all the radii of the collision spheres for all the GTA
